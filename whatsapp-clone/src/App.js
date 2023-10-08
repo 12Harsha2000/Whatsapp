@@ -3,8 +3,7 @@ import './App.css';
 import Sidebar from './Sidebar';
 
 function App() {
-  return (
-    //BEM naming convention
+  return ( 
      <div className="App">
      <div className="app_body">
        <Sidebar />
