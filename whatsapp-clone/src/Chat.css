@@ -66,4 +66,23 @@
   padding: 30px;
   overflow: scroll;  
 }
+
+.chat_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+  border-top: 1px solid Lightgray;
+}
+
+.chat_footer > form {
+  flex: 1;
+  display: flex;
+  border-color: blue;
+}
+
+.chat_footer > form > input {
+  flex: 1;
+  border-radius: 30px;
+}
  
