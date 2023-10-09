@@ -7,4 +7,12 @@ const firebaseConfig = {
     messagingSenderId: "816726071264",
     appId: "1:816726071264:web:efc8b1d190ff1ecd7b3d85",
     measurementId: "G-PM6ZS9BYEX"
-  };
+  };
+
+  const firebaseapp = firebase.initializeApp(firebaseConfig);
+  const db = firebaseApp.firestore();
+  const auth = firebase.auth();
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  export { auth, provider };
+  export default db;
