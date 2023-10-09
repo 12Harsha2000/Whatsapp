@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import Sidebar from './Sidebar';
 import Chat from "./Chat";
-import{ BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import{ BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from './Login';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -10,18 +11,16 @@ function App() {
   return ( 
     <div className="App">
       {!user ? (
-        <h1>LOGIN</h1>
+        <Login />
       ) : (
         <div className="app_body">
         <Router>
-         <Switch>
          <Sidebar />
-   
-   
+         <Switch>
            <Route path = "/rooms/:roomId">
              <Chat />
            </Route>
-            <Route path="/">
+            <Route path="/" exact>
              <Chat />
             </Route>
          </Switch>
