@@ -12,15 +12,14 @@ function Sidebar() {
   const [rooms, setRooms] = useState([]);
   
   useEffect(() => {
-    db.collection('rooms').onSnapshot(snapshot 
-    =>
+    db.collection('rooms').onSnapshot(snapshot => {
       setRooms(
         snapshot.docs.map(doc => ({
         id: doc.id,
         data: doc.data(),
       }))
-      )
-    );
+      );
+    });
   }, [])
 
   return(
@@ -40,11 +39,12 @@ function Sidebar() {
       </div>
      </div>
      <div className="sidebar_search">
-        <div className="sidebar_searchContainer">
-
-        </div>
-        <SearchOutlined />
+      <div className="sidebar_searchContainer">
+        <IconButton>
+          <SearchOutlined />
+        </IconButton>
         <input placeholder="Search or start new chat" type="text" />
+      </div>
      </div>
 
      <div className="sidebar_chats">
