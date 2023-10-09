@@ -4,9 +4,10 @@ import Sidebar from './Sidebar';
 import Chat from "./Chat";
 import{ BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './Login';
+import { useStateValue } from './StateProvider';
 
 function App() {
-  const [user, setUser] = useState(null);
+const [{ user }, dispatch] = useStateValue();
 
   return ( 
     <div className="App">
@@ -16,11 +17,12 @@ function App() {
         <div className="app_body">
         <Router>
          <Sidebar />
-         <Switch>
+
+         <Switch>  
            <Route path = "/rooms/:roomId">
              <Chat />
            </Route>
-            <Route path="/" exact>
+            <Route path="/">
              <Chat />
             </Route>
          </Switch>
